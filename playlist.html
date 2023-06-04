@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYLIST</title>
+    <link rel="stylesheet" href="playlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    
+
+</head>
+<body>
+    <div class="man"></div>   
+        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <div class="container">
+            <div class="songlist">
+                <h1>MY PLAYLIST </h1>
+              
+                <div class="songcontainer">
+                   <div class="songitem">
+                    <span > SHIVA-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 03:10 <i id="1" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+
+                   <div class="songitem">
+                    <span>SHIVA-02</span>
+                    <span class="songlistplay"> <span class="timestamp"> 09:32 <i id="2" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span > SHIVA-03 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:40 <i id="3" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+
+                   <div class="songitem">
+                    <span > SHIVA-04 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 05:54 <i id="4" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   
+                   <div class="songitem">
+                    <span >SHIVA-05 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:52 <i id="5" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span >AMMA-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:45 <i id="6" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span >GANAPA-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 21:28 <i id="7" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span >HANUMAN-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 05:39 <i id="8" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span >KRISHNA-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 05:03 <i id="9" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+                   <div class="songitem">
+                    <span >AYYAPPA-01 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:09 <i id="10" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+                   <div class="songitem">
+                    <span >AYYAPPA-02 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:02 <i id="11" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+                   <div class="songitem">
+                    <span >AYYAPPA-03 </span>
+                    <span class="songlistplay"> <span class="timestamp"> 07:11 <i id="12" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                </div>
+            </div>
+            <div class="songbanner"></div>
+        </div>
+        <div class="columns">
+            <div class="right-col">
+               <p>PLAY MUSIC</p>
+               <img src="playy.png" id="icon">
+            </div>
+        </div>
+
+    </div>
+    <audio id="song">
+        <source  type="audio/mp3">
+    </audio>
+        <script>
+            var song=document.getElementById("song");
+            var icon=document.getElementById("icon");
+    
+    
+            var shiva1PlayButton = document.getElementById("1");
+            var shiva2PlayButton = document.getElementById("2");
+            var shiva3PlayButton = document.getElementById("3");
+            var shiva4PlayButton = document.getElementById("4");
+            var shiva5PlayButton = document.getElementById("5");
+            var ammaPlayButton = document.getElementById("6");
+            var ganapaPlayButton = document.getElementById("7");
+            var hanumanPlayButton = document.getElementById("8");
+            var krishnaPlayButton = document.getElementById("9");
+            var ayyappa1PlayButton = document.getElementById("10");
+            var ayyappa2PlayButton = document.getElementById("11");
+            var ayyappa3PlayButton = document.getElementById("12");
+
+        
+            icon.onclick = function(){
+                if(song.paused){
+                    song.play();
+                    icon.src="pausee.png";
+    
+                }
+                else{
+                    song.pause();
+                    icon.src="playy.png";
+                }
+            }
+    
+    
+            function playSong(songUrl) {
+              song.src = songUrl;
+              song.play();
+              icon.src = "pausee.png";
+            }
+          
+            function pauseSong() {
+              song.pause();
+              icon.src = "playy.png";
+            }
+          
+            shiva1PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("brama.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            shiva2PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("soj.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            shiva3PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("needu.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            shiva4PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("Hara Hara.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            shiva5PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("Bhuvanam.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+    
+            ammaPlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("nnn.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+            ganapaPlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("sidi.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+          
+            hanumanPlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("Re-Re.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+    
+            krishnaPlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("krish.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+          
+            ayyappa1PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("IRUMUDIKETTU.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            ayyappa2PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("Devare.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+            ayyappa3PlayButton.onclick = function () {
+              if (song.paused) {
+                playSong("Swamy-Ayyappa.mp3");
+              } else {
+                pauseSong();
+              }
+            };
+
+
+            var playlist = [
+    { name: "SHIVA-01", url: "brama.mp3" },
+    { name: "SHIVA-02", url: "soj.mp3" },
+    { name: "SHIVA-03", url: "needu.mp3" },
+    { name: "SHIVA-04", url: "Hara Hara.mp3" },
+    { name: "SHIVA-05", url: "Bhuvanam.mp3" },
+    { name: "AMMA-01", url: "nnn.mp3" },
+    { name: "GANAPA-01", url: "sidi.mp3" },
+    { name: "HANUMAN-01", url: "Re-Re.mp3" },
+    { name: "KRISHNA-01", url: "krish.mp3" },
+    { name: "AYYAPPA-01", url: "IRUMUDIKETTU.mp3" },
+    { name: "AYYAPPA-02", url: "Devare.mp3" },
+    { name: "AYYAPPA-03", url: "Swamy-Ayyappa.mp3" }
+    
+  ];
+  var currentSongIndex = 0;
+
+  function playSong(songUrl) {
+    song.src = songUrl;
+    song.play();
+    icon.src = "pausee.png";
+  }
+
+  function pauseSong() {
+    song.pause();
+    icon.src = "playy.png";
+  }
+
+  function playNextSong() {
+    currentSongIndex++;
+    if (currentSongIndex >= playlist.length) {
+      currentSongIndex = 0;
+    }
+    var nextSong = playlist[currentSongIndex];
+    playSong(nextSong.url);
+  }
+
+  song.addEventListener("ended", playNextSong);
+
+  icon.onclick = function () {
+    if (song.paused) {
+      if (song.src === "") {
+        // If no song is currently playing, start playing from the beginning
+        playNextSong();
+      } else {
+        // Resume playback
+        song.play();
+        icon.src = "pausee.png";
+      }
+    } else {
+      // Pause playback
+      pauseSong();
+    }
+  };
+  
+  </script>
+ <script src="https://kit.fontawesome.com/fd1afa8b5b.js" crossorigin="anonymous"></script>
+ <script src="script.js"></script>
+   
+</body>
+</html>

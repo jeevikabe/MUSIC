@@ -1,0 +1,217 @@
+.man{
+    width: 99%;
+    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(p5.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 93vh;
+    padding: 14px;
+    background-color: transparent; 
+    /*padding: 23px;
+    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(p5.jpeg);
+    background-size: cover;
+    width: 97%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 1%;*/
+
+}
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    color:whitesmoke;
+    background-color:black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid aliceblue;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid black;
+  }
+  
+
+ 
+  .back-button i {
+    margin-right: 5px;
+  }
+  .containerr {
+    position: fixed;
+    top: 370px;
+    right: 250px;
+  }
+  
+  .instrument-symbols {
+    display: flex;
+    font-size: 37px;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  
+  .instrument-symbols span {
+    margin-right: 10px;
+  }
+  .symbol {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    min-height: -50vh;
+    background-color: transparent;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 1%;
+    margin: 22px auto;
+    border-radius: 10px;
+    padding: 33px;
+    margin-top: -750px; /* Increased negative value */
+    top: 2%;
+    font-family: 'Lobster', cursive;  
+  }
+  
+
+.bottom{
+    position: sticky;
+    height: 160px;
+    color: aliceblue;
+    background-color:transparent;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    /* margin: 44px -7px;
+    padding: 19px 62px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    margin-top: 13px;
+}
+.icons i{
+    padding: 4px 4px;
+    cursor: pointer;
+}
+
+#progressbar{
+    width: 80vw;
+    text-align: center;
+    /* color: blue; */
+    cursor: pointer;
+    /* margin-top: 22px; */
+}
+
+.songitem{
+    height: 30px;
+    /* padding: 23px 34px; */
+    display: flex;
+    background-color: transparent;
+    /* width: 72%; */
+    color: aliceblue;
+    margin: 16px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 45px;
+    
+}
+.songitem img{
+    width: 36px;
+    height: 26px;
+    margin: -5px 18px;
+border-radius: 12px;
+}
+.timestamp{
+    margin: 0 23px;
+    /* cursor: pointer; */
+}
+.timestamp i{
+    cursor: pointer;
+}
+.songcontainer{
+    margin-top: 33px;
+
+}
+
+/*.columns{
+    width: 100%;
+    position: absolute;
+    top: 93%;
+    background-color: black;
+
+}
+
+.right-col{
+    float: right;
+    display: flex;
+    align-items: center;
+    margin-right: 12%;
+    margin-top: 8000px;
+    margin: 1px;
+position: absolute;
+margin-left: 36%;
+top: -725%;
+background: transparent;
+
+}
+
+.right-col p{
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 25px;
+    background: transparent;
+    text-align: center;
+    
+}
+#icon{
+    width: 45px;
+    cursor: pointer;
+     
+}*/
+.columns {
+    width: 100%;
+    position: absolute;
+    top: 93%;
+    background-color: black;
+    
+  }
+  
+  .right-col {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items horizontally at the center */
+    position: absolute;
+    top: -30px;
+    background: transparent;
+    width: 100%; /* Set the width to 100% */
+    left: -1%;
+  }
+  
+  .right-col p {
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 25px;
+    background: transparent;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  #icon {
+    width: 45px;
+    cursor: pointer;
+  }
+  

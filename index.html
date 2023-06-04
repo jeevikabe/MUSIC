@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MUSIC PLAYER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="aa.mp4" type="video/mp4" style="background-color: black;">
+        </video>
+        <div class="mp">
+            <p>Music is the <br>   strongest<br>
+             form of magic!!!</p>
+        </div>
+
+
+        <div class="containerr">
+            <div class="instrument-symbols">
+              <span>&#127925;</span> <!-- Trumpet -->
+              <span>&#127928;</span> <!-- Guitar -->
+              <span>&#127931;</span> <!-- Violin -->
+              <span>&#127930;</span> <!-- Drum -->
+              <span>&#127927;</span> <!-- Saxophone -->
+              <span>&#127929;</span> <!-- Musical Keyboard -->
+            </div>
+        </div>
+             
+        <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li> 
+            </ul>
+        </nav>
+
+       <div class="s">
+          <a href="playlist.html">PLAYLIST</a>
+      </div>
+
+        <div class="container">
+            <div class="songlist">
+                <h1>GOD SONGS </h1>             
+                <div class="songcontainer">
+                   <div class="songitem">
+                    <span > SHIVA </span>
+                    <span class="songlistplay"> <span class="timestamp"> 04:59 <i id="1" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span>GANAPA</span>
+                    <span class="songlistplay"> <span class="timestamp"> 06:45 <i id="2" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span > HANUMAN </span>
+                    <span class="songlistplay"> <span class="timestamp"> 03:43 <i id="3" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span > SUBRAMANYA </span>
+                    <span class="songlistplay"> <span class="timestamp"> 44:30 <i id="4" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                   <div class="songitem">
+                    <span >AMMA </span>
+                    <span class="songlistplay"> <span class="timestamp"> 15:12 <i id="5" class="fa-regular songitemplay  fa-circle-play"></i> </span> </span>
+                   </div>
+
+                </div>
+            </div>
+            <div class="songbanner"></div>
+        </div>
+                              
+
+        <div class="columns">
+            <div class="left-col">
+                <h1> MUSIC CAN CHANGE THE WORLD</h1>
+            </div>
+            <div class="right-col">
+                <p>PLAY MUSIC</p>
+                <img src="playy.png" id="icon">
+            </div>
+        </div>
+    </div>
+    <audio id="song">
+        <source src="an.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var song=document.getElementById("song");
+        var icon=document.getElementById("icon");
+
+        var shivaPlayButton = document.getElementById("1");
+        var ganapaPlayButton = document.getElementById("2");
+        var hanumanPlayButton = document.getElementById("3");
+        var subramanyaPlayButton = document.getElementById("4");
+        var ammaPlayButton = document.getElementById("5");
+    
+        icon.onclick = function(){
+            if(song.paused){
+                song.play();
+                icon.src="pausee.png";
+
+            }
+            else{
+                song.pause();
+                icon.src="playy.png";
+            }
+        }
+
+
+        function playSong(songUrl) {
+          song.src = songUrl;
+          song.play();
+          icon.src = "pausee.png";
+        }
+      
+        function pauseSong() {
+          song.pause();
+          icon.src = "playy.png";
+        }
+      
+        shivaPlayButton.onclick = function () {
+          if (song.paused) {
+            playSong("1183.mp3");
+          } else {
+            pauseSong();
+          }
+        };
+
+        ganapaPlayButton.onclick = function () {
+          if (song.paused) {
+            playSong("g.mp3");
+          } else {
+            pauseSong();
+          }
+        };
+      
+        hanumanPlayButton.onclick = function () {
+          if (song.paused) {
+            playSong("766.mp3");
+          } else {
+            pauseSong();
+          }
+        };
+
+        subramanyaPlayButton.onclick = function () {
+          if (song.paused) {
+            playSong("sub.mp3");
+          } else {
+            pauseSong();
+          }
+        };
+      
+        ammaPlayButton.onclick = function () {
+          if (song.paused) {
+            playSong("an.mp3");
+          } else {
+            pauseSong();
+          }
+        };
+
+ 
+  var playlist = [
+    { name: "SHIVA", url: "1183.mp3" },
+    { name: "GANAPA", url: "g.mp3" },
+    { name: "HANUMAN", url: "766.mp3" },
+    { name: "SUBRAMANYA", url: "sub.mp3" },
+    { name: "AMMA", url: "an.mp3" }
+  ];
+  var currentSongIndex = 0;
+
+  function playSong(songUrl) {
+    song.src = songUrl;
+    song.play();
+    icon.src = "pausee.png";
+  }
+
+  function pauseSong() {
+    song.pause();
+    icon.src = "playy.png";
+  }
+
+  function playNextSong() {
+    currentSongIndex++;
+    if (currentSongIndex >= playlist.length) {
+      currentSongIndex = 0;
+    }
+    var nextSong = playlist[currentSongIndex];
+    playSong(nextSong.url);
+  }
+
+  song.addEventListener("ended", playNextSong);
+
+  icon.onclick = function () {
+    if (song.paused) {
+      if (song.src === "") {
+        // If no song is currently playing, start playing from the beginning
+        playNextSong();
+      } else {
+        // Resume playback
+        song.play();
+        icon.src = "pausee.png";
+      }
+    } else {
+      // Pause playback
+      pauseSong();
+    }
+  };
+
+    </script>
+    <script src="https://kit.fontawesome.com/fd1afa8b5b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>   
+</body>
+</html>
